@@ -1,0 +1,1 @@
+look into responsive design and media queries

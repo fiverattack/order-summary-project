@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: hsl(225, 100%, 94%);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: [start] 6% [first-boundary] auto [last-boundary] 6% [end];
+    grid-template-rows: [start] 10% [first-boundary] auto [last-boundary] 10% [footer] min-content [end];
+    justify-items: center;
+    align-items: center;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;*/
+}
+
+@media (orientation: landscape) {
+    body {
+        background: top/contain url("images/pattern-background-desktop.svg") no-repeat hsl(225, 100%, 94%);
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        background: top/contain url("images/pattern-background-mobile.svg") no-repeat hsl(225, 100%, 94%);
+    }
+}
+
+#main-container {
+    background: white;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    grid-area: first-boundary / first-boundary / last-boundary / last-boundary;
+    max-height: 100%;
+    aspect-ratio: 2 / 3; /* width / height */
+}
+#illustration {
+    height: 30%;
+    background: center/cover url("images/illustration-hero.svg") no-repeat hsl(245, 75%, 52%);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    grid-area: footer / first-boundary / end / last-boundary;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
