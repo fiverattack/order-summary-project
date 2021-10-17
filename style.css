@@ -6,11 +6,15 @@
 
 body {
     background: hsl(225, 100%, 94%);
-    height: 100vh;
-    display: grid;
+    min-height: 100vh;
+    /*display: grid;
     grid-template-columns: [start] 6% [first-boundary] auto [last-boundary] 6% [end];
     grid-template-rows: [start] 10% [first-boundary] auto [last-boundary] 10% [footer] min-content [end];
     justify-items: center;
+    align-items: center;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-family: 'Red Hat Display', sans-serif;
     color: hsl(223, 47%, 23%);
@@ -33,36 +37,17 @@ body {
     background: white;
     border-radius: 1.25rem;
     overflow: hidden;
-    grid-area: first-boundary / first-boundary / last-boundary / last-boundary;
-    max-height: 100%;
-    aspect-ratio: 2 / 3; /* width / height */
+    /*grid-area: first-boundary / first-boundary / last-boundary / last-boundary;
+    max-height: 100%;*/
+    max-width: 27em;
+}
+#main-container > img {
+    width: 100%;
 }
 
-#illustration {
-    height: 30%;
-    background: center/cover url("images/illustration-hero.svg") no-repeat hsl(245, 75%, 52%);
-}
-
-#main-wrapper {
-    height: 70%; /* 100% - the #illustration height */
-}
-
-#main-flex {
-    height: 100%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+#main-content {
+    padding: 2.5em;
     text-align: center;
-}
-
-#plan-flex {
-    background-color: hsl(225, 100%, 98%);
-    display: flex;
-    justify-content: space-around;
-    max-width: 20rem;
-    border-radius: .75rem;
 }
 
 #cancel-order {
@@ -75,14 +60,53 @@ body {
 }
 
 h1 {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 900;
+    padding-bottom: .5em;
 }
 
 p {
     color: hsl(224, 23%, 55%);
+    line-height: 1.5;
 }
 
+/* "Annual Plan box */
+#plan-box {
+    background-color: hsl(225, 100%, 98%);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.2em;
+    width: 100%;
+    padding: 1.3em 1.2em;
+    margin: 1em 0 2em;
+    border-radius: .75rem;
+}
+
+#plan-box > a {
+    color:hsl(245, 75%, 52%);
+    font-weight: 700;
+    align-self: center;
+}
+#plan-box > a:hover {
+    color:hsl(245, 83%, 68%);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#plan-box > div {
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+/* "Proceed to Payment" button */
 button {
     background-color: hsl(245, 75%, 52%);
     color: white;
@@ -93,11 +117,11 @@ button {
     font-size: 1rem;
     display: inline-block;
     box-shadow: 0 .7em 1.3em hsl(245, 75%, 52%, 30%);
-    padding: 1em 0.75em;
-    width: 23em;
+    padding: 1em 0;
+    margin-bottom: 2em;
+    width: 100%;
     transition: 100ms all ease-in-out;
 }
-
 button:hover {
     background-color: hsl(245, 83%, 68%);
     cursor: pointer;
