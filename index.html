@@ -9,16 +9,19 @@
   <title>Frontend Mentor | Order summary card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div id="main-container"> <!-- this is the main container for content -->
     <div id="illustration"> <!-- this is for the image --> </div>
-    <div> <!-- wrapper for a flexbox --> 
-      <div> <!-- a flexbox containing the main stuff --> 
+    <div id="main-wrapper"> <!-- wrapper for a flexbox --> 
+      <div id="main-flex"> <!-- a flexbox containing the main stuff --> 
         <h1>Order Summary</h1>
         <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
-        <div> <!-- contains the annual plan box, also a flexbox --> 
+        <div id="plan-flex"> <!-- contains the annual plan box, also a flexbox --> 
           <div> <!-- music note image goes here --> </div>
           <div> <!-- annual plan text + --> 
             <h2>Annual Plan</h2>
@@ -27,7 +30,7 @@
           <p>Change</p>
         </div>
         <button type="button">Proceed to Payment</button>
-        <p>Cancel Order</p>
+        <p id="cancel-order">Cancel Order</p>
       </div>
     </div>
   </div>
