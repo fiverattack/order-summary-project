@@ -7,11 +7,7 @@
 body {
     background: hsl(225, 100%, 94%);
     min-height: 100vh;
-    /*display: grid;
-    grid-template-columns: [start] 6% [first-boundary] auto [last-boundary] 6% [end];
-    grid-template-rows: [start] 10% [first-boundary] auto [last-boundary] 10% [footer] min-content [end];
-    justify-items: center;
-    align-items: center;*/
+    padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +36,7 @@ body {
     /*grid-area: first-boundary / first-boundary / last-boundary / last-boundary;
     max-height: 100%;*/
     max-width: 27em;
+    box-shadow: 0 2em 2em hsl(224, 23%, 55%, 20%);
 }
 #main-container > img {
     width: 100%;
@@ -51,7 +48,9 @@ body {
 }
 
 #cancel-order {
+    color: hsl(224, 23%, 55%);
     font-weight: 700;
+    text-decoration: none;
 }
 
 #cancel-order:hover {
@@ -122,7 +121,8 @@ button {
     width: 100%;
     transition: 100ms all ease-in-out;
 }
-button:hover {
+button:hover,
+button:focus {
     background-color: hsl(245, 83%, 68%);
     cursor: pointer;
 }
